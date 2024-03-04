@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import {
   motion,
   useTransform,
@@ -13,7 +13,7 @@ export const TracingBeam = ({
   children,
   className,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -24,7 +24,8 @@ export const TracingBeam = ({
 
   // track velocity of scroll to increase or decrease distance between svg gradient y coordinates.
   const scrollYProgressVelocity = useVelocity(scrollYProgress);
-  const [velo, setVelocity] = React.useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars 
+  const [_, setVelocity] = useState(0);
 
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -36,13 +37,13 @@ export const TracingBeam = ({
     }
   }, []);
   useEffect(() => {
-    return scrollYProgressVelocity.onChange((latestVelocity) => {
+    return scrollYProgressVelocity.on("change", (latestVelocity) => {
       setVelocity(latestVelocity);
     });
-  }, []);
+  }, [scrollYProgressVelocity]);
 
   const y1 = useSpring(
-    useTransform(scrollYProgress, [0, 0.8], [50, svgHeight]),
+    useTransform(scrollYProgress, [0, 0.8], [10, svgHeight]),
     {
       stiffness: 500,
       damping: 90,
@@ -132,7 +133,7 @@ export const TracingBeam = ({
           </defs>
         </svg>
       </div>
-      <div ref={contentRef}>{children}</div>
+      <div className="w-full h-full relative m-0 p-0 antialiased" ref={contentRef}>{children}</div>
     </motion.div>
   );
 };

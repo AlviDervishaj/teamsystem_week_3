@@ -1,2 +1,4 @@
 export { TracingBeam } from "./tracking-beam";
-export { Boxes } from "./background-boxes";
+export { LampEffect } from "./light-beam";
+export { About } from "./about";
+export { Projects } from "./projects";

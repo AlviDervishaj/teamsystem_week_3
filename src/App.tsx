@@ -1,22 +1,18 @@
 // Components
-import { cn } from "../utils/cn";
-import { Boxes, TracingBeam } from "./components/ui";
+import { TracingBeam, LampEffect, About, Projects } from "./components/ui";
+import { ReactLenis } from '@studio-freight/react-lenis';
+import "./output.css";
 
 function App() {
   return (
-    <TracingBeam>
-      <div className="h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
-        <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-
-        <Boxes />
-        <h1 className={cn("md:text-4xl text-xl text-white relative z-20")}>
-          Tailwind is Awesome
-        </h1>
-        <p className="text-center mt-2 text-neutral-300 relative z-20">
-          Framer motion is the best animation library ngl
-        </p>
-      </div>
-    </TracingBeam>
+    <ReactLenis root>
+      <TracingBeam>
+        <LampEffect title={"Alvi Dervishaj"} description={"Front End Developer"} />
+        <div className="h-40 w-full md:relative hidden" />
+        <About />
+        <Projects />
+      </TracingBeam>
+    </ReactLenis>
   );
 }
 
