@@ -1,6 +1,7 @@
 // Components
 import { TracingBeam, LampEffect, About, Projects } from "./components/ui";
 import { ReactLenis } from '@studio-freight/react-lenis';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import "./output.css";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <About />
         <Projects />
       </TracingBeam>
+      <SpeedInsights />
     </ReactLenis>
   );
 }
