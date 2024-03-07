@@ -9,7 +9,7 @@ function App() {
   return (
     <ReactLenis root>
       <TracingBeam>
-        <LampEffect title={"Alvi Dervishaj"} description={"Front End Deper"} />
+        <LampEffect title={"Alvi Dervishaj"} description={"Front End Developer"} />
         <div className="h-40 w-full md:relative hidden" />
         <About />
         <Projects />
