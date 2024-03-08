@@ -78,7 +78,7 @@ export function Projects() {
     return renderedProjects;
   }
   return (
-    <div className="w-full h-fit px-2 pt-2 pb-80 mx-auto">
+    <div className="w-full h-fit px-2 pt-2 mx-auto" id="projects">
       <motion.h1
         initial={{ opacity: 0.5, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}

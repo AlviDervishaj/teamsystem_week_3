@@ -6,5 +6,6 @@
 @layer base {
   #root, body, html {
     @apply min-h-screen max-h-full w-full p-0 m-0 bg-[#020617];
+    scroll-behavior: smooth;
   }
 }

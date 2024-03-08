@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function About() {
   return (
-    <div className="w-full h-fit px-2 pt-2 pb-80 mx-auto">
+    <div className="w-full h-fit px-2 pt-2 pb-80 mx-auto" id="about me">
       <motion.h1
         initial={{ opacity: 0.5, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
