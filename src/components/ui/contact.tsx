@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useWindowSize } from "usehooks-ts";
 
 export function Contact() {
+  const { width = 0 } = useWindowSize();
   return (
     <motion.footer id="contact"
       initial={{ opacity: 0.1, y: -60 }}
@@ -12,8 +14,8 @@ export function Contact() {
       className="relative flex w-full min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 w-full rounded-md z-0">
 
       <motion.h1
-        initial={{ opacity: 0.2, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: width >= 600 ? 100 : 0, x: width <= 600 ? 100 : 0 }}
+        whileInView={{ opacity: 1, y: 0, x: 0 }}
         transition={{
           delay: 0.3,
           duration: 0.8,
@@ -25,8 +27,8 @@ export function Contact() {
       </motion.h1>
       <div className="w-full w-fit px-10 flex flex-col md:flex-row items-center content-center justify-evenly md:gap-4 gap-6 bg-gradient-to-br from-slate-300 to-slate-500 py-8 bg-clip-text text-center text-xl font-medium tracking-tight text-transparent md:text-4xl">
         <motion.a
-          initial={{ opacity: 0.2, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: width >= 600 ? 100 : 0, x: width < 600 ? -120 : 0 }}
+          whileInView={{ opacity: 1, y: 0, x: 0 }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -39,8 +41,8 @@ export function Contact() {
           Twitter
         </motion.a>
         <motion.a
-          initial={{ opacity: 0.2, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: width >= 600 ? 100 : 0, x: width < 600 ? -120 : 0 }}
+          whileInView={{ opacity: 1, y: 0, x: 0 }}
           transition={{
             delay: 0.5,
             duration: 0.8,
@@ -53,8 +55,8 @@ export function Contact() {
           Email
         </motion.a>
         <motion.a
-          initial={{ opacity: 0.2, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: width >= 600 ? 100 : 0, x: width < 600 ? -120 : 0 }}
+          whileInView={{ opacity: 1, y: 0, x: 0 }}
           transition={{
             delay: 0.7,
             duration: 0.8,
@@ -67,8 +69,8 @@ export function Contact() {
           LinkedIn
         </motion.a>
         <motion.a
-          initial={{ opacity: 0.2, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: width >= 600 ? 100 : 0, x: width < 600 ? -120 : 0 }}
+          whileInView={{ opacity: 1, y: 0, x: 0 }}
           transition={{
             delay: 0.9,
             duration: 0.8,
